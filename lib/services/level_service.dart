@@ -1,10 +1,14 @@
 import 'dart:convert';
 
+import 'package:estaqim_school/contracts/api_service.dart';
 import 'package:estaqim_school/models/level.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as Dotenv;
 import 'package:http/http.dart' as http;
-class LevelService {
-  Future<List<Level>> getLevels() async {
+class LevelService implements ApiService {
+
+  @override
+  Future<List<Level>> getAll() async {
+
     await Dotenv.dotenv.load();
     String levelsUrl = Dotenv.dotenv.env['LEVELS']!;
     http.Response response = await http.get(
