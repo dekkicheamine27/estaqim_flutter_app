@@ -6,24 +6,18 @@ import 'package:get/get.dart';
 
 import '../bindings/student_biding.dart';
 
-
-class LevelsPage extends GetView<LevelController>{
-
+class LevelsPage extends GetView<LevelController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('كل المستويات')),
         backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0.0,
+
       ),
       body: controller.obx((state) => LevelsList(controller.levels)),
-      drawer: Drawer(
-        child: MaterialButton(
-            child: Text('profile'),
-            onPressed: (){
-              Get.to(()=>Profile(), binding: StudentBinding());
-            }),
-      ),
+
     );
   }
 }

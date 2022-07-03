@@ -6,17 +6,10 @@ import 'package:estaqim_school/models/level.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as Dotenv;
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+
 class BooksService implements ApiBookService {
-
-
-
-
-
   @override
   Future<List<Book>> getAllBooks(int levelId) async {
-
-
-
     await Dotenv.dotenv.load();
     String levelsUrl = Dotenv.dotenv.env['BOOKS']!;
     http.Response response = await http.get(
