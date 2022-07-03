@@ -13,13 +13,13 @@ class Level {
     if (json['quizzes'] != null) {
       quizzes = <Quizzes>[];
       json['quizzes'].forEach((v) {
-        quizzes!.add( Quizzes.fromJson(v));
+        quizzes!.add(Quizzes.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;
     data['name'] = name;

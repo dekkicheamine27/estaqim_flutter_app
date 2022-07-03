@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.estaqim.estaqim_school">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="estaqim_school"
         android:name="${applicationName}"

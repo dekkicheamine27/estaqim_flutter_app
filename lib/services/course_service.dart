@@ -7,18 +7,10 @@ import 'package:estaqim_school/models/level.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as Dotenv;
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+
 class CourseService implements ApiCoursesService {
-
-
-
-
-
   @override
-
   Future<List<Course>> getCourses(int bookId) async {
-
-
-
     await Dotenv.dotenv.load();
     String booksUrl = Dotenv.dotenv.env['COURSES']!;
     http.Response response = await http.get(
@@ -35,6 +27,4 @@ class CourseService implements ApiCoursesService {
       throw Exception('no data found');
     }
   }
-
-
 }
